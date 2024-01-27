@@ -48,7 +48,7 @@ type SortableLanguageProps = {
 	isActive: boolean;
 };
 
-const SortableTodo = ({ language, isActive }: SortableLanguageProps) => {
+const SortableLanguage = ({ language, isActive }: SortableLanguageProps) => {
 	const { attributes, listeners, setNodeRef, transform, transition } =
 		useSortable({ id: language.id });
 
@@ -139,7 +139,7 @@ export default function StartListPage() {
 						items={languages}
 						strategy={verticalListSortingStrategy}>
 						{languages.map((language) => (
-							<SortableTodo
+							<SortableLanguage
 								isActive={activeId === language.id}
 								key={language.id}
 								language={language}
